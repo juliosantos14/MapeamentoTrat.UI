@@ -11,11 +11,11 @@ export class ImpressoraComponent implements OnInit {
 
   lista=true;
   confirmacaoExclusao:boolean = false;
-  impressora?: ImpressoraModel;
+  // impressora?: ImpressoraModel;
   impressoras?: ImpressoraModel[];
   impressoraParaExcluir: any;
-
-  editarImpressora= false;
+  impressoraParaAtualizar? : ImpressoraModel;
+  editarImpressoraBool = false;
 
 
   constructor(
@@ -36,6 +36,14 @@ export class ImpressoraComponent implements OnInit {
 
   }
 
+  editarImpressora(impressora: ImpressoraModel){
+
+    this.lista = false;
+    this.confirmacaoExclusao = false;
+    this.editarImpressoraBool = true;
+    this.impressoraParaAtualizar = impressora;
+  }
+
   mensagemExclusao(impressora: ImpressoraModel){
     this.confirmacaoExclusao = true;
     this.lista = false;
@@ -51,10 +59,15 @@ export class ImpressoraComponent implements OnInit {
 
   }
 
+  atualizarLista(impressoras: ImpressoraModel[]){
+    this.impressoras = impressoras;
+  }
+
   adicionarImpressora(){
     this.lista = false;
     this.confirmacaoExclusao = false;
-    this.editarImpressora = true;
+    this.editarImpressoraBool = true;
+    this.impressoraParaAtualizar = new ImpressoraModel();
   }
 
 }

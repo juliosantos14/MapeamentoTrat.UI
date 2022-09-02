@@ -14,6 +14,7 @@ import { RamalComponent } from './_pages/cadastro/ramal/ramal.component';
 import { ImpressoraFormComponent } from './_pages/cadastro/impressora/impressora-form/impressora-form.component';
 import { TesteComponent } from './_pages/chamado/teste/teste.component';
 import { BodyComponent } from './_pages/body/body.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { BodyComponent } from './_pages/body/body.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
